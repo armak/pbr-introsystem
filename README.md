@@ -3,4 +3,6 @@ Prismbeings intro system for building and developing primarily 4k demoscene intr
 
 Note that this is just a very very skimpy empty canves that provides the bare necessities. It's enough to make excellent intros, but be prepared to implement a lot of common functionality yourself. Currently only tested with Visual Studio 2013. Further updates and transitioning to VS2015 coming very soon.
 
+The main component i.e. the Win32 frame and the "rendering system" is called Leviathan, for now, as per Prismbeings canon.
+
 Ships with Crinkler 2.0, rename to link.exe and build in "Release" to compress.
