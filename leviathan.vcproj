@@ -2,7 +2,7 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="i4k_OGLShader_vc2008"
+	Name="Leviathan"
 	ProjectGUID="{59C1D4F3-AE93-4A0A-B4FE-60841CA865E5}"
 	TargetFrameworkVersion="131072"
 	>
@@ -41,7 +41,7 @@
 				MkTypLibCompatible="true"
 				SuppressStartupBanner="true"
 				TargetEnvironment="1"
-				TypeLibraryName=".\bin/Debug/i4k_OGLShader_vc2008.tlb"
+				TypeLibraryName=".\bin/Debug/Leviathan.tlb"
 				HeaderFileName=""
 			/>
 			<Tool
@@ -51,7 +51,7 @@
 				PreprocessorDefinitions="_DEBUG;WINDOWS;DEBUG;SIMD;A32BITS;_CRT_SECURE_NO_WARNINGS"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="0"
-				PrecompiledHeaderFile=".\bin/Debug/i4k_OGLShader_vc2008.pch"
+				PrecompiledHeaderFile=".\bin/Debug/Leviathan.pch"
 				AssemblerListingLocation="$(OutDir)"
 				ObjectFile="$(OutDir)"
 				ProgramDataBaseFileName="$(OutDir)"
@@ -97,7 +97,7 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile="$(OutDir)i4k_OGLShader_vc2008.bsc"
+				OutputFile="$(OutDir)Leviathan.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -136,7 +136,7 @@
 				MkTypLibCompatible="true"
 				SuppressStartupBanner="true"
 				TargetEnvironment="1"
-				TypeLibraryName=".\bin/Release/i4k_OGLShader_vc2008.tlb"
+				TypeLibraryName=".\bin/Release/Leviathan.tlb"
 				HeaderFileName=""
 			/>
 			<Tool
@@ -154,7 +154,7 @@
 				StructMemberAlignment="1"
 				BufferSecurityCheck="false"
 				FloatingPointModel="2"
-				PrecompiledHeaderFile=".\bin/Release/i4k_OGLShader_vc2008.pch"
+				PrecompiledHeaderFile=".\bin/Release/Leviathan.pch"
 				AssemblerOutput="4"
 				AssemblerListingLocation="$(OutDir)"
 				ObjectFile="$(OutDir)"
@@ -203,7 +203,7 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\bin/Release/i4k_OGLShader_vc2008.bsc"
+				OutputFile=".\bin/Release/Leviathan.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"

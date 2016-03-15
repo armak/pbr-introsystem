@@ -9,23 +9,23 @@
 
 void initShader(short* pid, const char* fs)
 {
-    pid[0] = oglCreateProgram();                           
+	pid[0] = oglCreateProgram();                           
 	const int fsId = oglCreateShader(GL_FRAGMENT_SHADER);
 	oglShaderSource(fsId,1,&fs,0);
-    oglCompileShader(fsId);
+	oglCompileShader(fsId);
 	oglAttachShader(pid[0],fsId);
 	oglLinkProgram(pid[0]);
 
-    int result;
-    char info[1536];
+	int result;
+	char info[1536];
 	//oglGetObjectParameteriv( vsId,   GL_OBJECT_COMPILE_STATUS_ARB, &result ); oglGetInfoLog( vsId,   1024, NULL, (char *)info ); if (!result) MessageBox(NULL, info, "", 0x00000000L);
 	oglGetObjectParameteriv( fsId, GL_OBJECT_COMPILE_STATUS_ARB,   &result); oglGetInfoLog(fsId, 1024, NULL, (char *)info); if (!result) MessageBox(NULL, info, "", 0x00000000L);
 	oglGetObjectParameteriv( pid[0], GL_OBJECT_LINK_STATUS_ARB,    &result ); oglGetInfoLog( pid[0], 1024, NULL, (char*)info ); //if (!result) MessageBox(NULL, info, "", 0x00000000L);
-    
 }
+
 void intro_init(void)
 {
 	EXT_Init();
-    initShader(&pid, fragment);
+	initShader(&pid, fragment);
 }
 #endif

@@ -56,7 +56,7 @@
       <MkTypLibCompatible>true</MkTypLibCompatible>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TargetEnvironment>Win32</TargetEnvironment>
-      <TypeLibraryName>.\bin/Debug/i4k_OGLShader_vc2008.tlb</TypeLibraryName>
+      <TypeLibraryName>.\bin/Debug/Leviathan.tlb</TypeLibraryName>
       <HeaderFileName />
     </Midl>
     <ClCompile>
@@ -65,7 +65,7 @@
       <PreprocessorDefinitions>_DEBUG;WINDOWS;DEBUG;SIMD;A32BITS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <PrecompiledHeaderOutputFile>.\bin/Debug/i4k_OGLShader_vc2008.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile>.\bin/Debug/Leviathan.pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>$(OutDir)</AssemblerListingLocation>
       <ObjectFileName>$(OutDir)</ObjectFileName>
       <ProgramDataBaseFileName>$(OutDir)</ProgramDataBaseFileName>
@@ -93,7 +93,7 @@
     </Link>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>$(OutDir)i4k_OGLShader_vc2008.bsc</OutputFile>
+      <OutputFile>$(OutDir)Leviathan.bsc</OutputFile>
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -102,7 +102,7 @@
       <MkTypLibCompatible>true</MkTypLibCompatible>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TargetEnvironment>Win32</TargetEnvironment>
-      <TypeLibraryName>.\bin/Release/i4k_OGLShader_vc2008.tlb</TypeLibraryName>
+      <TypeLibraryName>.\bin/Release/Leviathan.tlb</TypeLibraryName>
       <HeaderFileName />
     </Midl>
     <ClCompile>
@@ -119,7 +119,7 @@
       <StructMemberAlignment>1Byte</StructMemberAlignment>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <FloatingPointModel>Fast</FloatingPointModel>
-      <PrecompiledHeaderOutputFile>.\bin/Release/i4k_OGLShader_vc2008.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile>.\bin/Release/Leviathan.pch</PrecompiledHeaderOutputFile>
       <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
       <AssemblerListingLocation>$(OutDir)</AssemblerListingLocation>
       <ObjectFileName>$(OutDir)</ObjectFileName>
@@ -156,7 +156,7 @@
     </Link>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>.\bin/Release/i4k_OGLShader_vc2008.bsc</OutputFile>
+      <OutputFile>.\bin/Release/Leviathan.bsc</OutputFile>
     </Bscmake>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>

@@ -14,22 +14,22 @@
 #include "mmreg.h"
 
 static const PIXELFORMATDESCRIPTOR pfd = {
-    sizeof(PIXELFORMATDESCRIPTOR), 1, PFD_DRAW_TO_WINDOW|PFD_SUPPORT_OPENGL|PFD_DOUBLEBUFFER, PFD_TYPE_RGBA,
-    32, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 32, 0, 0, PFD_MAIN_PLANE, 0, 0, 0, 0 };
+	sizeof(PIXELFORMATDESCRIPTOR), 1, PFD_DRAW_TO_WINDOW|PFD_SUPPORT_OPENGL|PFD_DOUBLEBUFFER, PFD_TYPE_RGBA,
+	32, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 32, 0, 0, PFD_MAIN_PLANE, 0, 0, 0, 0 };
 
 static DEVMODE screenSettings = { {0},
-    #if _MSC_VER < 1400
-    0,0,148,0,0x001c0000,{0},0,0,0,0,0,0,0,0,0,{0},0,32,XRES,YRES,0,0,      // Visual C++ 6.0
-    #else
-    0,0,156,0,0x001c0000,{0},0,0,0,0,0,{0},0,32,XRES,YRES,{0}, 0,           // Visual Studio 2005+
-    #endif
-    #if(WINVER >= 0x0400)
-    0,0,0,0,0,0,
-    #if (WINVER >= 0x0500) || (_WIN32_WINNT >= 0x0400)
-    0,0
-    #endif
-    #endif
-    };
+	#if _MSC_VER < 1400
+	0,0,148,0,0x001c0000,{0},0,0,0,0,0,0,0,0,0,{0},0,32,XRES,YRES,0,0,      // Visual C++ 6.0
+	#else
+	0,0,156,0,0x001c0000,{0},0,0,0,0,0,{0},0,32,XRES,YRES,{0}, 0,           // Visual Studio 2005+
+	#endif
+	#if(WINVER >= 0x0400)
+	0,0,0,0,0,0,
+	#if (WINVER >= 0x0500) || (_WIN32_WINNT >= 0x0400)
+	0,0
+	#endif
+	#endif
+	};
 
 SAMPLE_TYPE	lpSoundBuffer[MAX_SAMPLES * 2];
 static HWAVEOUT hWaveOut;
@@ -62,22 +62,22 @@ static MMTIME MMTime =
 	TIME_SAMPLES, 0
 };
 
-//#define FULLSCREEN
+#define FULLSCREEN
 void entrypoint( void )
 {
 	// initialize window
 	#ifdef FULLSCREEN
-    ChangeDisplaySettings(&screenSettings,CDS_FULLSCREEN);
-    ShowCursor(0);
+	ChangeDisplaySettings(&screenSettings,CDS_FULLSCREEN);
+	ShowCursor(0);
 	HDC hDC = GetDC(CreateWindow((LPCSTR)0xC018, 0, WS_POPUP | WS_VISIBLE, 0, 0, XRES, YRES, 0, 0, 0, 0));
 	#else
 	HDC hDC = GetDC(CreateWindow("static", 0, WS_POPUP | WS_VISIBLE, 0, 0, XRES, YRES, 0, 0, 0, 0));
 	#endif	
 
 	// initalize opengl
-    SetPixelFormat(hDC,ChoosePixelFormat(hDC,&pfd),&pfd);
-    wglMakeCurrent(hDC,wglCreateContext(hDC));
-    EXT_Init();
+	SetPixelFormat(hDC,ChoosePixelFormat(hDC,&pfd),&pfd);
+	wglMakeCurrent(hDC,wglCreateContext(hDC));
+	EXT_Init();
 
 	// initialize, compile and link shader(s)
 	const int pid = oglCreateProgram();
@@ -94,25 +94,25 @@ void entrypoint( void )
 	waveOutWrite(hWaveOut, &WaveHDR, sizeof(WaveHDR));
 	const int to = timeGetTime();
 	
-    // play intro
-    do 
-    {
+	// play intro
+	do 
+	{
 		// update time
 		waveOutGetPosition(hWaveOut, &MMTime, sizeof(MMTIME));
-        const int t = timeGetTime() - to;
+		const int t = timeGetTime() - to;
 		// use shader and pass time variable
 		oglUseProgram(pid);
 		oglUniform1i(oglGetUniformLocation(pid, "m"), t);
 		// draw to buffer and swap
 		glRects(-1, -1, 1, 1);
-        SwapBuffers(hDC);
-    } while(!GetAsyncKeyState(VK_ESCAPE) && MMTime.u.sample < 9999);
+		SwapBuffers(hDC);
+	} while(!GetAsyncKeyState(VK_ESCAPE) && MMTime.u.sample < 9999);
 
-    #ifdef CLEANDESTROY
-    sndPlaySound(0,0);
-    ChangeDisplaySettings( 0, 0 );
-    ShowCursor(1);
-    #endif
+	#ifdef CLEANDESTROY
+	sndPlaySound(0,0);
+	ChangeDisplaySettings( 0, 0 );
+	ShowCursor(1);
+	#endif
 
-    ExitProcess(0);
+	ExitProcess(0);
 }
